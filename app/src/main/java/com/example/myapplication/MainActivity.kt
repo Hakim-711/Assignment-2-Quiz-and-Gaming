@@ -2,9 +2,12 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import java.util.*
 import kotlin.random.Random as Random1
 
@@ -30,6 +33,24 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater=menuInflater
+        inflater.inflate(R.menu.menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId)
+        {
+            R.id.action_settings->Toast.makeText(this," try to search selected item ",Toast.LENGTH_SHORT).show()
+            R.id.action_search->Toast.makeText(this,"try to setting selectd item",Toast.LENGTH_SHORT).show()
+
+        }
+        return true;
     }
 
 
